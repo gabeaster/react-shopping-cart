@@ -9,6 +9,7 @@ import ShoppingCart from './components/ShoppingCart';
 
 //Contexts
 import { ProductContext } from './contexts/ProductContext';
+import { CartContext } from './contexts/CartContext';
 
 
 //We have a function called app that returns a Div (.App) that renders a Navigation component, a Product Component routed component, and a ShoppingCart routed component
@@ -29,8 +30,9 @@ function App() {
 	return (
 		<div className="App">
 			<ProductContext.Provider value={{ cart, products, addItem}}>
+			<CartContext.Provider value={ cart }>
 				<>
-					<Navigation cart={cart} />
+					<Navigation />
 
 					{/* Routes */}
 					<Route exact path="/">
@@ -40,9 +42,10 @@ function App() {
 
 					<Route path="/cart">
 						{/* ShoppingCart is receiving cart as props */}
-						<ShoppingCart cart={cart} />
+						<ShoppingCart />
 					</Route>
 				</>
+			</CartContext.Provider>
 			</ProductContext.Provider>
 		</div>
 	);
