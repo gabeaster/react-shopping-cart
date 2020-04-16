@@ -7,6 +7,7 @@ import App from './App';
 const AppWithRouter = withRouter(App);
 
 ReactDOM.render(
+	//App with Router is wrapped by BrowserRouter as Router
 	<Router>
 		<AppWithRouter />
 	</Router>,
