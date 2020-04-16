@@ -1,5 +1,8 @@
 import React from 'react';
 
+
+//Production is a funciton that pulls in props and returns a div (.product) and renders an img, h1, p, and button that all rely on props.product
+//Refactor this using ContextAPI
 const Product = props => {
 	return (
 		<div className="product">
